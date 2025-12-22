@@ -8,7 +8,10 @@ public enum ResMessage {
 	TYPE_ERROR(400, "Type error!!"),//
 	OPTIONS_SIZE_ERROR(400, "Options size error!!"),//
 	QUIZ_ID_MISMATCH(400, "Quiz id mismatch!!"),//
-	QUIZ_NOT_FOUND(404, "Quiz not found!!");
+	QUIZ_NOT_FOUND(404, "Quiz not found!!"),//
+	QUESTION_NOT_FOUND(404, "Question not found!!"),//
+	OPTION_NAME_MISMATCH(400, "Option name mismatch!!"),//
+	ANSWER_REQUIRED(400, "Answer required!!");
 
 	private int code;
 

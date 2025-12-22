@@ -16,5 +16,15 @@ public class ValidationMsg {
 	public static final String TYPE_ERROR = "Type error!!";
 	
 	public static final String QUIZ_ID_ERROR = "Quiz id error!!";
+	
+	public static final String USER_NAME_IS_EMPTY = "User name is empty!!";
+	
+	public static final String EMAIL_IS_EMPTY = "Email is empty!!";
+	
+	public static final String USER_AGE_ERROR = "User age error!!";
+	
+	public static final String QUESTION_ID_ERROR = "Question id error!!";
+	
+	public static final String ANSWERVO_IS_EMPTY = "AnswerVo is empty!!";
 
 }
