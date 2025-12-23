@@ -6,6 +6,16 @@ public class Options {
 
 	private String optionName;
 
+	public Options() {
+		super();
+	}
+
+	public Options(int code, String optionName) {
+		super();
+		this.code = code;
+		this.optionName = optionName;
+	}
+
 	public int getCode() {
 		return code;
 	}
