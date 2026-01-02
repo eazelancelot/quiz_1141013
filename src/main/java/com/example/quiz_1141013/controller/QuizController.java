@@ -17,6 +17,7 @@ import com.example.quiz_1141013.response.GetListRes;
 import com.example.quiz_1141013.response.GetQuestionRes;
 import com.example.quiz_1141013.service.QuizService;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.Valid;
 
 @CrossOrigin
@@ -31,6 +32,7 @@ public class QuizController {
 		return quizService.create(req);
 	}
 	
+//	@Hidden
 	@PostMapping("quiz/update")
 	public BasicRes update(@Valid @RequestBody QuizUpdateReq req) throws Exception {
 		return quizService.update(req);

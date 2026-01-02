@@ -29,6 +29,21 @@ public class QuizCreateReq {
 	@Valid
 	private List<QuestionVo> questionVoList;
 
+	public QuizCreateReq() {
+		super();
+	}
+
+	public QuizCreateReq(String title, String description, LocalDate startDate, LocalDate endDate, boolean published,
+			List<QuestionVo> questionVoList) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.published = published;
+		this.questionVoList = questionVoList;
+	}
+
 	public String getTitle() {
 		return title;
 	}

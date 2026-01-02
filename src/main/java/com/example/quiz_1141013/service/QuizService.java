@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -132,14 +133,18 @@ public class QuizService {
 		return new BasicRes(ResMessage.SUCCESS.getCode(), ResMessage.SUCCESS.getMessage());
 	}
 	
+	@Cacheable(cacheNames = "quiz_get_all")
 	public GetListRes getAll() {
+		System.out.println("===================");
 		return new GetListRes(ResMessage.SUCCESS.getCode(), ResMessage.SUCCESS.getMessage(),//
 				quizDao.getAll());
 	}
 	
+	@Cacheable(cacheNames = "quiz_get_filter_all", key = "#p0 + '-' + #p1.toString()")
 	public GetListRes getAll(String keyword, LocalDate startDate, LocalDate endDate) {
 		/* 把 keyword 是 null(沒有輸入值) 或 空字串 或全空白字串 轉換成空字串
 		 * 目的是後面在取資料時會使用 like %%，%% 中間是空字串時，也是會撈全部*/
+		System.out.println("===================");
 		if(!StringUtils.hasText(keyword)) {
 			keyword = "";
 		}

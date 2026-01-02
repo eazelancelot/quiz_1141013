@@ -34,7 +34,7 @@ public interface QuizDao extends JpaRepository<Quiz, Integer> {
 	@Query(value = "select * from quiz", nativeQuery = true)
 	public List<Quiz> getAll();
 	
-	@Query(value = "select * from quiz where title like %?1% and start_date >= ?2 and end_date =< ?3",//
+	@Query(value = "select * from quiz where title like %?1% and start_date >= ?2 and end_date <= ?3",//
 			nativeQuery = true)
 	public List<Quiz> getAll(String keyword, LocalDate startDate, LocalDate endDate);
 }
